@@ -1,0 +1,1030 @@
+@keyframes bg-main-moving {
+    from {
+        background-size: 100% 100%;
+    }
+    to {
+        background-size: 115% 115%;
+    }
+}
+
+@font-face {
+    font-family: "iran-yekan";
+    font-weight: normal;
+    src: url("fonts/iranyekan/ttf/iranyekanwebregular.ttf") format("truetype"),
+    url("fonts/iranyekan/woff/iranyekanwebregular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "iran-yekan";
+    font-weight: bold;
+    src: url("fonts/iranyekan/ttf/iranyekanwebbold.ttf") format("truetype"),
+    url("fonts/iranyekan/woff/iranyekanwebbold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "pinar";
+    font-weight: normal;
+    src: url("fonts/pinar/pinar-400.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "pinar";
+    font-weight: bold;
+    src: url("fonts/pinar/pinar-700.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "iran-number";
+    font-weight: normal;
+    src: url("fonts/iranyekan_numbers/ttf/iranyekanwebregular(fanum).ttf") format("truetype");
+}
+
+:root {
+    --color-1: #c46cdc;
+    --color-2: rgba(119, 87, 183);
+    --color-3: rgba(119, 87, 183, 0.78);
+    --color-4: rgba(203, 121, 225, 0.66);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: iran-number, iran-yekan, sans-serif;
+
+    ::selection {
+        background-color: var(--color-1);
+        color: white;
+    }
+}
+
+body {
+    direction: rtl;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+main {
+    /*border: 1px solid red;*/
+    min-height: 100px;
+    background-image: url("../images/main_bg.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    animation-name: bg-main-moving;
+    animation-duration: 5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#top-header {
+    /*border: 2px solid white;*/
+    color: white;
+    min-height: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+a.logo {
+    display: inline-block;
+}
+
+a.logo img {
+    height: 75px;
+}
+
+#top-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#top-nav > ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+#top-nav > ul > li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+#top-nav > ul > li > a:link,
+#top-nav > ul > li > a:visited {
+    color: white;
+    display: inline-block;
+    background-image: linear-gradient(var(--color-2), var(--color-2));
+    background-size: 0 3px;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    transition: all 300ms;
+    padding-bottom: 8px;
+}
+
+#top-nav > ul > li > a:hover {
+    color: var(--color-2);
+    background-size: 100% 3px;
+}
+
+#meno-btn {
+    color: white;
+    font-size: 25px;
+    /*border: 1px solid rebeccapurple;*/
+    display: inline-block;
+    cursor: pointer;
+}
+
+#main-item-wrapper {
+    /*border: 1px solid red;*/
+    text-align: center;
+    min-height: 50px;
+    padding: 120px 0 200px;
+}
+
+#main-item-wrapper h2 {
+    color: white;
+    margin: 0 0 32px 0;
+}
+
+#main-item-wrapper h1 {
+    color: white;
+    font-family: pinar, iran-yekan-web, IRANYekanWeb, "B Yekan+", sans-serif;
+    font-size: 48px;
+    margin: 0 0 32px 0;
+}
+
+#main-item-wrapper h1 span {
+    color: var(--color-3);
+    font-family: pinar, iran-yekan-web, IRANYekanWeb, "B Yekan+", sans-serif;
+}
+
+#main-item-wrapper h5 {
+    color: gray;
+    margin: 25px 0 50px;
+}
+
+#main-item-wrapper form {
+    /*border: 1px solid white;*/
+    background-color: rgba(255, 255, 255, 0.25);
+    width: 50%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+input#user-search {
+    width: calc(100% - 88px);
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    padding-right: 10px;
+    color: white;
+}
+
+#user-search:focus {
+    outline: 0;
+}
+
+#user-search::placeholder {
+    color: #a9a9a9;
+}
+
+.purple-btn {
+    border: 0;
+    border-radius: 10px;
+    background-color: var(--color-2);
+    color: white;
+    padding: 10px 18px;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.purple-btn:hover {
+    background-color: var(--color-1);
+}
+
+#overlay-meno {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 300px;
+    right: 0;
+    background-color: white;
+    z-index: -1;
+    opacity: 0;
+    transition: all 300ms;
+}
+
+.overlay-meno-show {
+    opacity: 1 !important;
+    z-index: 10 !important;
+    top: 0 !important;
+}
+
+#overlay-container {
+    /*border: 1px solid red;*/
+    height: 100%;
+    width: 55%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px 0;
+}
+
+#meno-item-wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 30px;
+    row-gap: 5px;
+}
+
+.meno-item {
+    width: 100%;
+    padding: 18px 10px;
+    text-align: right;
+    background-color: #ecebeb;
+    font-size: 20px;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.meno-item i {
+    margin-left: 10px;
+    font-size: 18px;
+    transition: all 300ms;
+}
+
+#overlay-container .logo {
+    margin-bottom: 100px;
+}
+
+#overlay-meno .fa-close {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    font-size: 30px;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+#overlay-meno .fa-close:hover {
+    color: var(--color-1);
+}
+
+.meno-item:hover span {
+    transition: all 300ms
+}
+
+.meno-item:hover {
+    background-color: var(--color-2);
+    color: white;
+}
+
+.meno-item:hover i {
+    transform: translateX(-10px);
+}
+
+#services {
+    /*border: 1px solid red;*/
+    padding: 100px 0;
+}
+
+.section-title {
+    font-size: 30px;
+    font-family: pinar, iran-yekan-web, IRANYekanWeb, "B Yekan+", sans-serif;
+    text-align: center;
+    position: relative;
+    margin: 0 0 30px;
+}
+
+.section-title::after,
+.section-title::before {
+    content: "";
+    display: inline-block;
+    height: 3px;
+    background-color: var(--color-2);
+    width: 50px;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.section-title::before {
+    bottom: -7px;
+    width: 130px;
+}
+
+.section-title::after {
+    bottom: -17px;
+}
+
+.section-sub-title {
+    text-align: center;
+    color: #5b5b5b;
+    margin: 20px 0 40px;
+}
+
+#service-wrapper {
+    /*border: 1px solid red;*/
+    min-height: 100px;
+    display: flex;
+    gap: 15px;
+}
+
+.service {
+    /*border: 1px solid black;*/
+    flex-basis: 25%;
+    border-radius: 10px 20px 40px;
+    box-shadow: 0 0 15px -3px gray;
+    text-align: center;
+    padding: 10px;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.service-header {
+    width: 65px;
+    height: 80px;
+    border-radius: 7px 20px 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: var(--color-3);
+    background-color: #f3eee3;
+    transition: all 300ms;
+}
+
+.service h2 {
+    letter-spacing: -1px;
+    font-size: 21px;
+    transition: all 300ms;
+}
+
+.service p {
+    color: gray;
+    line-height: 2;
+    font-size: 13px;
+    margin-bottom: 30px;
+    transition: all 300ms;
+}
+
+.more-details:link,
+.more-details:visited {
+    display: inline-block;
+    color: var(--color-1);
+    margin-bottom: 15px;
+    transition: all 300ms;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    background-color: var(--color-2);
+}
+
+.service:hover h2,
+.service:hover p,
+.service:hover a.more-details:link,
+.service:hover a.more-details:visited {
+    color: white;
+}
+
+.service:hover .service-header {
+    background-color: white;
+    transform: rotateY(180deg);
+}
+
+#features {
+    /*border: 1px solid rebeccapurple;*/
+    min-height: 100px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/bg3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 100px 0;
+}
+
+#feature-wrapper {
+    /*border: 1px solid white;*/
+    min-height: 100px;
+    display: flex;
+}
+
+.feature {
+    /*border: 1px solid orange;*/
+    flex-basis: 25%;
+    text-align: center;
+}
+
+.feature i {
+    color: var(--color-2);
+    font-size: 40px;
+}
+
+.feature h1 {
+    color: white;
+    font-family: pinar, iran-yekan-web, IRANYekanWeb, "B Yekan+", sans-serif;
+    font-size: 50px;
+    margin: 30px 0 10px;
+}
+
+.feature h5 {
+    color: white;
+    font-size: 16px;
+    margin: 0;
+}
+
+#comments {
+    /*border: 1px solid rebeccapurple;*/
+    padding: 100px 0;
+}
+
+#comments-wrapper {
+    /*border: 1px solid rebeccapurple;*/
+    display: flex;
+    column-gap: 30px;
+    min-height: 100px;
+}
+
+.comment {
+    /*border: 1px solid orange;*/
+    flex-basis: 50%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 4px 4px 15px -3px #9d9d9d;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    padding: 20px;
+    position: relative;
+}
+
+.right-side {
+    flex-basis: calc(100% - 85px);
+    /*border: 1px solid rebeccapurple;*/
+}
+
+.left-side {
+    flex-basis: 85px;
+    /*border: 1px solid rebeccapurple;*/
+    position: relative;
+}
+
+.bottom-side {
+    flex-basis: 100%;
+    /*border: 1px solid rebeccapurple;*/
+}
+
+.right-side img {
+    width: 100px;
+    border-radius: 50%;
+    border-top: 5px solid rebeccapurple;
+    border-bottom: 5px solid #FBF0DF;
+    border-left: 5px solid #FBF0DF;
+    border-right: 5px solid rebeccapurple;
+}
+
+.right-side div {
+    display: inline-block;
+    vertical-align: 16px;
+    margin-right: 5px;
+    width: calc(100% - 51%);
+}
+
+.right-side div h3 {
+    margin: 0;
+}
+
+.right-side div h5 {
+    color: gray;
+    margin: 10px 0;
+}
+
+.right-side div i {
+    color: gold;
+}
+
+.left-side img {
+    width: 85px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.bottom-side p {
+    color: #5b5b5b;
+    line-height: 2;
+    font-size: 14px;
+}
+
+.slide-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.slide-btn div {
+    width: 18px;
+    height: 18px;
+    background-color: #ffd0d0;
+    border-radius: 50%;
+}
+
+.slide-btn div:nth-child(2) {
+    background-color: var(--color-2);
+}
+
+#work-samples {
+    text-align: center;
+}
+
+#work-samples-filter {
+    margin: 0 0 30px 0;
+    list-style-type: none;
+    display: inline-block;
+    border: 2px solid var(--color-1);
+    border-radius: 50px;
+    padding: 5px;
+}
+
+#work-samples-filter li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#work-samples-filter li:first-child {
+    margin-right: 0;
+}
+
+#work-samples-filter li:last-child {
+    margin-left: 0;
+}
+
+#work-samples-filter li a:link,
+#work-samples-filter li a:visited {
+    display: inline-block;
+    color: var(--color-2);
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: all 300ms;
+}
+
+#work-samples-filter li a:hover {
+    background-color: var(--color-1);
+    color: white;
+}
+
+.active:link,
+.active:visited,
+.active{
+    background-color: var(--color-1);
+    color: white !important;
+}
+
+#work-samples-wrapper {
+    /*border: 1px solid rebeccapurple;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.work-sample {
+    overflow: hidden;
+    position: relative;
+    flex-basis: 25%;
+}
+
+.work-sample img {
+    width: 100%;
+    vertical-align: middle;
+    transform-origin: right center;
+    transform: scale(1.11);
+    transition: all 300ms;
+}
+
+.work-sample:hover img {
+    transform: scale(1);
+}
+
+.work-sample::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-4);
+    opacity: 0;
+    transition: all 300ms;
+    z-index: 2;
+}
+
+.work-sample:hover::after {
+    opacity: 1;
+}
+
+.work-sample h4 {
+    text-align: right;
+    border-right: 5px solid white;
+    color: white;
+    position: absolute;
+    top: 45px;
+    left: 10px;
+    z-index: 3;
+    padding-right: 8px;
+    line-height: 1.8;
+    opacity: 0;
+    margin: 0;
+    transition: all 300ms;
+}
+
+.work-sample:hover h4 {
+    opacity: 1;
+    transform: translateX(30px);
+}
+
+.work-sample h2 {
+    margin: 0;
+    opacity: 0;
+    color: black;
+    font-family: pinar, iran-yekan-web, IRANYekanWeb, "B Yekan+", sans-serif;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 3;
+    transition: all 300ms;
+}
+
+.work-sample:hover h2 {
+    opacity: 1;
+}
+
+#team {
+    padding: 100px 0;
+}
+
+#team-wrapper {
+    display: flex;
+    min-height: 100px;
+    gap: 15px;
+}
+
+.team {
+    flex-basis: 25%;
+    overflow: hidden;
+    border-radius: 15px;
+    text-align: center;
+    background-color: #F2E8D8;
+    position: relative;
+}
+
+.team::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: var(--color-2);
+    transform-origin: right center;
+    transform: rotateY(90deg);
+    transition: all 400ms;
+}
+
+.team img {
+    width: 100%;
+    vertical-align: middle;
+    position: relative;
+    z-index: 2;
+}
+
+.team h4 {
+    color: var(--color-1);
+    font-size: 15px;
+    z-index: 2;
+    position: relative;
+    transition: all 300ms;
+}
+
+.team h3 {
+    z-index: 2;
+    position: relative;
+    transition: all 300ms;
+}
+
+.team:hover::after {
+    transform: rotateY(0);
+}
+
+.team:hover h3,
+.team:hover h4 {
+    color: white;
+}
+
+.social-media {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    min-height: 10px;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 3;
+    transform-origin: left center;
+    transform: rotateY(90deg);
+    transition: all 300ms;
+}
+
+.team:hover .social-media {
+    transform: rotateY(0);
+}
+
+.social-media a:link,
+.social-media a:visited {
+    color: black;
+    transition: all 200ms;
+}
+
+.social-media a:hover {
+    color: var(--color-2);
+}
+
+#contact-us {
+    padding: 100px 0;
+}
+
+#contact-us-wrapper {
+    /*border: 1px solid rebeccapurple;*/
+    min-height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 60px;
+}
+
+.contact-us {
+    /*border: 1px solid black;*/
+    flex-basis: 33%;
+    text-align: center;
+}
+
+.contact-us i {
+    font-size: 45px;
+    display: inline-block;
+    margin-bottom: 15px;
+    color: var(--color-2);
+}
+
+.contact-us h3 {
+    font-weight: 500;
+}
+
+.contact-us h3:nth-of-type(1) {
+    color: gray;
+    font-weight: bold;
+}
+
+#r-l-b-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+    justify-content: space-between;
+}
+
+#right-col,
+#left-col,
+#bottom-col {
+    flex-basis: 48%;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+
+#bottom-col {
+    flex-basis: 100%;
+}
+
+.form-control {
+    background-color: #FDF2E1;
+    color: black;
+    border: 0;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    outline: 0;
+    border: 2px solid var(--color-2);
+}
+
+#contact-us form textarea {
+    height: 200px;
+}
+
+#bottom-footer {
+    padding: 30px 0;
+    /*border: 1px solid rebeccapurple;*/
+    background-image: url("../images/footer_bg.png"),
+    linear-gradient(165deg, #CC5DCB, #AA41E5);
+    background-size: cover;
+}
+
+#footer-wrapper {
+    min-height: 100px;
+    /*border: 1px solid green;*/
+    display: flex;
+    gap: 2px;
+    justify-content: space-between;
+}
+
+.footer-col {
+    /*border: 1px solid white;*/
+    flex-grow: 1;
+}
+
+.footer-col:first-child {
+    flex-grow: 1.2;
+}
+
+.footer-col:last-child {
+    flex-basis: 230px;
+}
+
+.footer-col:first-child #footer-logo {
+    height: 70px;
+}
+
+.footer-col:first-child p {
+    margin: 10px 0;
+    line-height: 1.8;
+    color: white;
+    width: 230px;
+}
+
+#links-wrapper {
+    padding: 0 15px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#links-wrapper a:link,
+#links-wrapper a:visited {
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 50%;
+    transition: all 300ms
+}
+
+#links-wrapper a:hover {
+    background-color: white;
+    color: black;
+}
+
+.footer-titre {
+    font-family: pinar, iran-yekan, IRANYekanWeb, "B Yekan+", sans-serif;
+    margin: 0 0 10px;
+    color: white;
+    position: relative;
+    padding-bottom: 10px;
+    font-size: 20px;
+    /*border: 1px solid rebeccapurple;*/
+    width: 150px;
+}
+
+.footer-titre::after,
+.footer-titre::before {
+    content: "";
+    display: inline-block;
+    height: 3px;
+    width: 50%;
+    background-color: white;
+}
+
+.footer-titre::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.footer-titre::before {
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    height: 1px;
+}
+
+
+#footer-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+#footer-list li {
+    margin: 20px 0;
+}
+
+#footer-list li a:link,
+#footer-list li a:visited {
+    color: white;
+    font-size: 15px;
+    transition: all 300ms;
+}
+
+#footer-list li a:hover {
+    color: var(--color-2);
+}
+
+#software-store {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#software-store a {
+    display: inline-block;
+    width: 150px;
+}
+
+#software-store a img {
+    width: 100%;
+    opacity: 0.8;
+    transition: all 200ms;
+}
+
+#software-store a img:hover {
+    opacity: 1;
+}
+
+#footer-l-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+#footer-l-wrapper a:link,
+#footer-l-wrapper a:visited {
+    background-color: #373430;
+    color: white;
+    border-radius: 5px;
+    padding: 7px 5px;
+    display: inline-block;
+    transition: all 200ms;
+    font-size: 14px;
+}
+
+#footer-l-wrapper a:hover {
+    background-color: #4F5151;
+}
+
+#copy-right {
+    padding: 10px 0;
+    background-color: #373430;
+    text-align: center;
+}
+
+#copy-right p {
+    color: #a9a9a9;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+#copy-right i {
+    color: green;
+    font-size: 18px;
+    display: inline-block;
+    vertical-align: middle;
+}

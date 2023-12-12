@@ -1,0 +1,293 @@
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 85%;
+    }
+
+    #top-nav > ul > li {
+        margin: 0 11px;
+    }
+
+    #footer-wrapper {
+        gap: 13px;
+    }
+
+    #links-wrapper {
+        padding: 0;
+        gap: 5px;
+    }
+
+    .footer-col:first-child p {
+        font-size: 14px;
+    }
+
+    .team h3 {
+        font-size: 17px;
+    }
+
+    .team h4 {
+        font-size: 13px;
+    }
+    #overlay-container{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #top-nav > ul > li {
+        margin: 0 7px;
+    }
+
+    a#logo img {
+        height: 60px;
+    }
+
+    #main-item-wrapper form {
+        width: 55%;
+    }
+
+    #service-wrapper {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .service {
+        flex-basis: 48%;
+    }
+
+    .left-side img,
+    .left-side {
+        width: 75px;
+    }
+
+    #work-samples-filter li {
+        margin: 0 20px;
+    }
+
+    #work-samples-wrapper {
+        grid-template-columns: repeat(2, auto);
+    }
+
+    #team-wrapper {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .team {
+        flex-basis: 48%;
+    }
+
+    #footer-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .footer-col {
+        flex-basis: 49% !important;
+    }
+
+    .footer-col:first-child p {
+        width: 350px;
+        font-size: 16px;
+    }
+
+    #software-store {
+        flex-direction: row;
+    }
+
+    #links-wrapper {
+        justify-content: space-evenly;
+    }
+    #overlay-container{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .footer-col {
+        flex-basis: 41% !important;
+    }
+
+    .right-side div h3 {
+        font-size: 15px;
+    }
+
+    .right-side div h5 {
+        font-size: 12px;
+    }
+
+    .right-side div i {
+        font-size: 12px;
+    }
+
+    .right-side img {
+        width: calc(100% - 55%);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #top-nav > ul {
+        display: none;
+    }
+
+    #main-item-wrapper form {
+        width: 90%;
+    }
+
+    #main-item-wrapper {
+        padding: 100px 0 50px;
+    }
+
+    .service {
+        flex-basis: 100%;
+    }
+
+    #feature-wrapper {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .feature {
+        flex-basis: 47%;
+    }
+
+    .left-side img,
+    .left-side {
+        width: 55px;
+    }
+
+    .left-side img {
+        top: 20px;
+    }
+    .comment {
+        flex-basis: 47%;
+    }
+    .right-side img{
+        width: 100px;
+    }
+    .right-side div{
+        width: auto;
+    }
+    #comments-wrapper {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .right-side img,
+    .right-side div {
+        position: absolute;
+        top: 20px;
+        right: 50%;
+        transform: translatex(50%);
+    }
+
+    .right-side div {
+        top: 130px;
+    }
+
+    .bottom-side p {
+        margin-top: 190px;
+    }
+
+    #work-samples-filter li {
+        margin: 0 10px;
+    }
+
+    #contact-us-wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contact-us {
+        flex-basis: 50%;
+    }
+
+    .footer-col {
+        flex-basis: 46% !important;
+    }
+
+    .footer-col:first-child p {
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 665px) {
+    #main-item-wrapper h1 {
+        font-size: 42px;
+    }
+
+    #work-samples-filter li {
+        margin: 0;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    #main-item-wrapper h1 {
+        font-size: 50px;
+        line-height: 1.5;
+    }
+    .feature {
+        flex-basis: 100%;
+    }
+
+    .comment {
+        flex-basis: 100%;
+    }
+
+    #work-samples-filter {
+        display: block;
+        width: 90%;
+        margin: 0 auto 15px;
+        border-radius: 25px;
+
+    }
+
+    #work-samples-filter li,
+    #work-samples-filter li a:link,
+    #work-samples-filter li a:visited {
+        display: block;
+        margin: 5px 0;
+    }
+
+    #work-samples-wrapper {
+        grid-template-columns: auto;
+    }
+
+    .team {
+        flex-basis: 100%;
+    }
+
+    .contact-us {
+        flex-basis: 100%;
+        margin-top: 20px;
+    }
+
+    #left-col,
+    #right-col {
+        flex-basis: 100%;
+    }
+
+    .footer-col {
+        flex-basis: 100%;
+    }
+
+    .footer-col:first-child {
+        text-align: center;
+    }
+
+    #footer-wrapper {
+        flex-direction: column;
+    }
+
+    #software-store {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    #copy-right p {
+        font-size: 13px;
+    }
+    #overlay-container{
+        width: 95%;
+    }
+}
